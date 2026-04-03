@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oh-my-kimi — 面向 Kimi 的多智能体编排</title>
+    <meta name="description" content="oh-my-kimi 是一个面向 Kimi Code CLI 的 Kimi-first 多智能体编排层，提供技能、安装、团队执行和文档站点。" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav" aria-label="Primary">
+        <a class="brand" href="./index.html">oh-my-kimi</a>
+        <a class="active" href="./index.html">首页</a>
+        <a href="./getting-started.html">快速开始</a>
+        <a href="./docs.html">文档</a>
+        <a href="./skills.html">技能</a>
+        <a href="./integrations.html">集成</a>
+        <a href="./compatibility.html">兼容性</a>
+        <a href="../index.html">EN</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="badge">GitHub Pages · oh-my-kimi / OMK</span>
+          <h1>让 Kimi 先跑起来，再把工作流做好。</h1>
+          <p>
+            oh-my-kimi 把 Kimi Code CLI 变成一个面向工作流的环境：技能、安装、团队协同和持久化状态都已经准备好，
+            迁移期间仍保留 <code>omx</code> 作为兼容别名。
+          </p>
+          <div class="actions">
+            <a class="button primary" href="./getting-started.html">快速开始</a>
+            <a class="button" href="https://github.com/wang-h/oh-my-kimi">查看 GitHub</a>
+            <a class="button" href="./docs.html">浏览文档</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="../assets/hero.jpg" alt="oh-my-kimi 吉祥物插图" />
+          <div class="mini">这是 oh-my-kimi 的公共站点，用来承接 CLI 仓库文档并提供一个清晰的中文入口。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>它能带来什么</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>像产品一样可用的命令</h3>
+            <p>安装、诊断、帮助、团队、规划、Ralph 等工作流被组织成统一体验。</p>
+          </article>
+          <article class="card">
+            <h3>持久化的项目状态</h3>
+            <p>计划、日志、记忆和模式状态都保存在 <code>.omx/</code> 中，可跨会话延续。</p>
+          </article>
+          <article class="card">
+            <h3>随仓库一起交付的文档</h3>
+            <p>从这里可以找到入门、兼容边界和核心文档页面。</p>
+          </article>
+          <article class="card">
+            <h3>面向公众的品牌站点</h3>
+            <p>网站与 CLI 仓库分离，便于持续打磨公开页面并快速迭代。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split">
+        <article class="card">
+          <h3>快速启动</h3>
+          <ol>
+            <li><code>npm install -g oh-my-kimi</code></li>
+            <li><code>omk setup</code></li>
+            <li><code>omk doctor</code></li>
+            <li><code>omk</code> 或 <code>omx</code></li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>兼容边界</h3>
+          <p>这个 fork 是 Kimi-first，但部分 OMX 行为仍属于兼容层。建议先阅读兼容说明，再判断是否完全等价。</p>
+          <p><a href="./compatibility.html">查看兼容说明 →</a></p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>继续浏览</h2>
+        <div class="grid">
+          <article class="card"><h3><a href="./docs.html">文档</a></h3><p>查看完整站点地图和版本相关页面。</p></article>
+          <article class="card"><h3><a href="./skills.html">技能</a></h3><p>了解常用工作流和快捷入口。</p></article>
+          <article class="card"><h3><a href="./integrations.html">集成</a></h3><p>查看 MCP、通知和外部服务接入。</p></article>
+          <article class="card"><h3><a href="./getting-started.html">快速开始</a></h3><p>用最少步骤完成安装与启动。</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="split">
+          <div>
+            <strong>oh-my-kimi</strong>
+            <div class="muted">面向 Kimi-first 分支的公共网站。</div>
+          </div>
+          <div class="muted">
+            <a href="https://github.com/wang-h/oh-my-kimi">CLI 仓库</a> ·
+            <a href="https://github.com/wang-h/oh-my-kimi-website">网站仓库</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

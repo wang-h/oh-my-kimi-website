@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oh-my-kimi 兼容性</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav" aria-label="Primary">
+        <a class="brand" href="./index.html">oh-my-kimi</a>
+        <a href="./index.html">首页</a>
+        <a href="./getting-started.html">快速开始</a>
+        <a href="./docs.html">文档</a>
+        <a href="./skills.html">技能</a>
+        <a href="./integrations.html">集成</a>
+        <a class="active" href="./compatibility.html">兼容性</a>
+        <a href="../index.html">EN</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="badge">迁移边界</span>
+          <h1>哪些已经是 Kimi-first，哪些还只是兼容层？</h1>
+          <p>oh-my-kimi 不是简单改名。有些 surface 仍是稳定别名，等迁移完成后再逐步收口。</p>
+        </div>
+      </section>
+
+      <section class="section split">
+        <article class="card">
+          <h3>Kimi-first</h3>
+          <ul>
+            <li>主包名：<code>oh-my-kimi</code></li>
+            <li>主命令名：<code>omk</code></li>
+            <li>公开文档和网站品牌</li>
+            <li>setup / doctor / help 页面</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>兼容别名</h3>
+          <ul>
+            <li><code>omx</code> 在迁移期间仍可用</li>
+            <li>历史文档里可能还会出现上游痕迹</li>
+            <li>一些底层运行时术语内部还可能写着 OMX</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section card">
+        <h3>尚未显式支持时</h3>
+        <p>如果某个 Kimi 能力没有直接对应的 OMX 能力，最安全的方式是明确写成限制，而不是假装已经等价。</p>
+      </section>
+    </main>
+  </body>
+</html>

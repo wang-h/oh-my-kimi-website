@@ -9,6 +9,7 @@ Open `index.html` directly in a browser, or serve the directory with any static 
 ## Purpose
 
 - Public landing page for oh-my-kimi / OMK / omk
+- English and Chinese pages
 - Docs portal and compatibility overview
 - Separate site source from the CLI repo
 
