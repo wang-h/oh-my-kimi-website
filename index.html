@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>oh-my-kimi — Kimi-first multi-agent orchestration</title>
-    <meta name="description" content="oh-my-kimi is a Kimi-first multi-agent orchestration layer with skills, setup, team execution, and docs for daily use." />
+    <title>oh-my-kimi — the Kimi CLI enhancement layer</title>
+    <meta name="description" content="oh-my-kimi is an oh-my-codex-style enhancement layer built for Kimi CLI, adding setup, skills, team workflows, and durable runtime state." />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -24,41 +24,67 @@
     <main class="container">
       <section class="hero">
         <div>
-          <span class="badge">GitHub Pages · oh-my-kimi / OMK</span>
-          <h1>A Kimi-first workflow layer for planning, execution, and verification.</h1>
+          <span class="badge">Built for Kimi CLI · OMK</span>
+          <h1>The oh-my-codex-style enhancement layer for Kimi CLI.</h1>
           <p>
-            oh-my-kimi turns Kimi Code CLI into a workflow-oriented environment for planning, execution, and verification. It adds skills, setup, coordinated team runs, and durable state, with a small compatibility layer for older workflows.
+            oh-my-kimi gives Kimi CLI a stronger shell around the core agent experience: setup, skills,
+            repeatable workflows, team execution, runtime helpers, and durable local state. If you have seen
+            projects like oh-my-codex or oh-my-claudecode, this is that kind of layer—but built for Kimi CLI.
           </p>
           <div class="actions">
             <a class="button primary" href="./getting-started.html">Get started</a>
             <a class="button" href="https://github.com/wang-h/oh-my-kimi">View on GitHub</a>
             <a class="button" href="./docs.html">Browse docs</a>
           </div>
+          <div class="hero-note">
+            Kimi CLI stays the execution engine. oh-my-kimi adds the reusable workflow shell on top.
+          </div>
         </div>
         <div class="hero-art">
           <img src="./assets/hero.jpg" alt="oh-my-kimi mascot illustration" />
-          <div class="mini">A lightweight public site for the oh-my-kimi fork, built to mirror the project docs and link the CLI repo to a public home page.</div>
+          <div class="mini">A blue, Kimi-first identity for the public site and CLI fork.</div>
         </div>
       </section>
 
       <section class="section">
-        <h2>What it gives you</h2>
+        <h2>What this project is</h2>
+        <div class="compare-grid">
+          <article class="card">
+            <div class="kicker">Engine</div>
+            <h3>Kimi CLI</h3>
+            <p>The core CLI still does the actual agent execution, prompting, and session work.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Enhancement layer</div>
+            <h3>oh-my-kimi</h3>
+            <p>Adds setup, skills, docs, runtime helpers, team workflows, and a more opinionated day-to-day shell.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Comparable projects</div>
+            <h3>oh-my-codex / oh-my-claudecode</h3>
+            <p>Similar idea, different target CLI: this fork is specifically shaped around Kimi CLI usage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Why people use it</h2>
         <div class="grid">
           <article class="card">
-            <h3>What this project does</h3>
-            <p>It turns Kimi Code CLI into a workflow layer that helps you plan work, execute it in parallel, verify the result, and keep project state across sessions.</p>
+            <h3>Reusable workflow shell</h3>
+            <p>Use the same planning, execution, and verification flow every time instead of improvising prompts from scratch.</p>
           </article>
           <article class="card">
-            <h3>Durable project state</h3>
-            <p>Plans, logs, memory, and mode tracking live in the project state directory so work survives across sessions.</p>
+            <h3>Kimi-first setup</h3>
+            <p>Get a more complete Kimi CLI environment with setup, doctor, skill scaffolding, and a documented default path.</p>
           </article>
           <article class="card">
-            <h3>Documentation that ships with the repo</h3>
-            <p>Start here for getting started, compatibility boundaries, and the key docs pages.</p>
+            <h3>Team + runtime support</h3>
+            <p>Layer in tmux teams, HUD, MCP, notifications, and state tracking without rebuilding the shell yourself.</p>
           </article>
           <article class="card">
-            <h3>Public-facing brand surface</h3>
-            <p>The website is intentionally separate from the CLI repo so the public site can stay polished, easy to update, and easy to understand for new visitors.</p>
+            <h3>Local project memory</h3>
+            <p>Plans, logs, runtime state, and workflow artifacts live locally so sessions remain durable across work days.</p>
           </article>
         </div>
       </section>
@@ -70,26 +96,42 @@
             <li><code>npm install -g oh-my-kimi</code></li>
             <li><code>omk setup</code></li>
             <li><code>omk doctor</code></li>
-            <li><code>omk</code> is the primary command name; older workflows remain compatible during the migration.</li>
+            <li><code>omk</code></li>
           </ol>
+          <p class="muted">That gets you from install to a Kimi-first workflow shell in minutes.</p>
         </article>
         <article class="card">
-          <h3>Compatibility boundary</h3>
-          <p>
-            The fork is Kimi-first, but some older workflow behaviors are still compatibility-oriented. Read the
-            compatibility page before assuming full parity.
-          </p>
-          <p><a href="./compatibility.html">Read compatibility notes →</a></p>
+          <h3>Core workflow</h3>
+          <p>oh-my-kimi is opinionated about how work should flow once you are inside Kimi CLI.</p>
+          <pre><code>$deep-interview "clarify the task"
+$ralplan "approve the implementation plan"
+$ralph "drive it to completion"
+$team 3:executor "parallelize the approved work"</code></pre>
         </article>
+      </section>
+
+      <section class="section card">
+        <h2>Project attribution</h2>
+        <p>
+          <strong>oh-my-kimi</strong> is a Kimi-first fork built on top of
+          <a href="https://github.com/Yeachan-Heo/oh-my-codex">oh-my-codex</a>.
+          The original project and upstream orchestration design are credited to
+          <strong>Yeachan-Heo</strong>.
+        </p>
+        <p>
+          This fork is maintained by <strong>hao</strong> (<code>wang-h</code>).
+          The migration, branding, and adaptation work for oh-my-kimi was completed on top of the oh-my-codex foundation,
+          with substantial execution help from <strong>OpenAI Codex / Codex CLI workflows</strong>.
+        </p>
       </section>
 
       <section class="section">
         <h2>Explore the site</h2>
         <div class="grid">
-          <article class="card"><h3><a href="./docs.html">Docs</a></h3><p>Find the full doc map and release-related pages.</p></article>
-          <article class="card"><h3><a href="./skills.html">Skills</a></h3><p>Learn the high-traffic workflows and shortcuts.</p></article>
-          <article class="card"><h3><a href="./integrations.html">Integrations</a></h3><p>See MCP, notifications, and external service guidance.</p></article>
-          <article class="card"><h3><a href="./getting-started.html">Getting started</a></h3><p>Install and launch the Kimi-first path in a few steps.</p></article>
+          <article class="card"><h3><a href="./docs.html">Docs</a></h3><p>Read the public documentation map for the Kimi CLI enhancement layer.</p></article>
+          <article class="card"><h3><a href="./skills.html">Skills</a></h3><p>See the reusable workflows that make oh-my-kimi feel productized.</p></article>
+          <article class="card"><h3><a href="./integrations.html">Integrations</a></h3><p>Connect MCP, notifications, GitHub, and supporting runtime tooling.</p></article>
+          <article class="card"><h3><a href="./compatibility.html">Compatibility</a></h3><p>Understand what is Kimi-native, what was inherited, and what is intentionally out of scope.</p></article>
         </div>
       </section>
     </main>
@@ -99,7 +141,7 @@
         <div class="split">
           <div>
             <strong>oh-my-kimi</strong>
-            <div class="muted">Public website for the Kimi-first fork.</div>
+            <div class="muted">A blue, Kimi-first enhancement layer for Kimi CLI.</div>
           </div>
           <div class="muted">
             <a href="https://github.com/wang-h/oh-my-kimi">CLI repo</a> ·

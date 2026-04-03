@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi Compatibility</title>
+    <meta name="description" content="How oh-my-kimi relates to Kimi CLI, oh-my-codex, and the shell behaviors it intentionally keeps or changes." />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -22,37 +23,41 @@
     <main class="container">
       <section class="hero">
         <div>
-          <span class="badge">Migration boundary</span>
-          <h1>What is Kimi-first and what is still in transition?</h1>
-          <p>oh-my-kimi is intentionally not a blind rename. Some surfaces are stable aliases while the port finishes.</p>
+          <span class="badge">Compatibility boundary</span>
+          <h1>Kimi-native first, inspired by oh-my-codex—not a blind copy.</h1>
+          <p>
+            oh-my-kimi borrows the idea of an “oh-my-*” enhancement layer, but it is being shaped specifically for Kimi CLI.
+            That means some concepts are inherited, some are adapted, and some are intentionally left out.
+          </p>
         </div>
       </section>
 
       <section class="section split">
         <article class="card">
-          <h3>Kimi-first</h3>
+          <h3>Kimi-native surfaces</h3>
           <ul>
             <li>Primary package name: <code>oh-my-kimi</code></li>
             <li>Primary command name: <code>omk</code></li>
             <li>Public docs and website branding</li>
-            <li>Setup / doctor / help surfaces</li>
+            <li>Kimi CLI-first positioning and shell language</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Compatibility alias</h3>
+          <h3>Inherited ideas</h3>
           <ul>
-            <li>Older command names remain available during migration</li>
-            <li>Historical mentions may still exist in archived docs</li>
-            <li>Some lower-level runtime terms may still reflect older workflow names internally</li>
+            <li>Workflow-shell model inspired by oh-my-codex</li>
+            <li>Setup + skills + team + state as the main shell pieces</li>
+            <li>Project attribution to the upstream design work</li>
+            <li>Porting decisions documented instead of hidden</li>
           </ul>
         </article>
       </section>
 
       <section class="section card">
-        <h3>Unsupported until explicitly added</h3>
+        <h3>What this site wants you to understand</h3>
         <p>
-          If a Kimi capability does not have a direct legacy equivalent, the safest path is to document it as a
-          limitation instead of pretending parity exists.
+          oh-my-kimi should be read as “an enhancement layer for Kimi CLI,” not as a generic multi-agent site and not as a
+          silent rename of another project. That distinction is the main compatibility story.
         </p>
       </section>
     </main>

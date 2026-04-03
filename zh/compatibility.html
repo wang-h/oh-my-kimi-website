@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi 兼容性</title>
+    <meta name="description" content="说明 oh-my-kimi 与 Kimi CLI、oh-my-codex 之间的关系：它是受启发的 Kimi-first 增强层，而不是盲目照搬。" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -23,35 +24,42 @@
     <main class="container">
       <section class="hero">
         <div>
-          <span class="badge">迁移边界</span>
-          <h1>哪些已经是 Kimi-first，哪些还只是兼容层？</h1>
-          <p>oh-my-kimi 不是简单改名。有些 surface 仍是稳定别名，等迁移完成后再逐步收口。</p>
+          <span class="badge">兼容性边界</span>
+          <h1>Kimi-native 优先，受 oh-my-codex 启发，但不是盲目照搬。</h1>
+          <p>
+            oh-my-kimi 借鉴的是“oh-my-* 增强层”这种思路，但它最终要服务的是 Kimi CLI。
+            所以有些概念会继承，有些会改写，有些则明确不做。
+          </p>
         </div>
       </section>
 
       <section class="section split">
         <article class="card">
-          <h3>Kimi-first</h3>
+          <h3>Kimi-native 部分</h3>
           <ul>
             <li>主包名：<code>oh-my-kimi</code></li>
             <li>主命令名：<code>omk</code></li>
-            <li>公开文档和网站品牌</li>
-            <li>setup / doctor / help 页面</li>
+            <li>公开文档与网站品牌</li>
+            <li>围绕 Kimi CLI 重写后的 shell 定位</li>
           </ul>
         </article>
         <article class="card">
-          <h3>兼容过渡</h3>
+          <h3>继承来的思路</h3>
           <ul>
-            <li>旧别名在迁移期间仍可用</li>
-            <li>历史文档里可能还会出现上游痕迹</li>
-            <li>一些底层运行时术语内部还可能沿用旧称</li>
+            <li>“工作流外壳”这个核心模型来自 oh-my-codex</li>
+            <li>setup + skills + team + state 是主要组成</li>
+            <li>对上游来源保持明确引用，而不是假装没有历史</li>
+            <li>迁移决策写清楚，而不是藏起来</li>
           </ul>
         </article>
       </section>
 
       <section class="section card">
-        <h3>尚未显式支持时</h3>
-        <p>如果某个 Kimi 能力没有直接对应的旧版能力，最安全的方式是明确写成限制，而不是假装已经等价。</p>
+        <h3>这个页面最想说明什么</h3>
+        <p>
+          你应该把 oh-my-kimi 理解成“给 Kimi CLI 用的增强层”，而不是一个泛多智能体站点，也不是一个没有说明来源的静默 rename。
+          这就是兼容性页面最重要的边界说明。
+        </p>
       </section>
     </main>
   </body>

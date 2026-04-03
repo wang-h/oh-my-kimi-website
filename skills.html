@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi Skills</title>
+    <meta name="description" content="See the reusable skills and workflow shortcuts that make oh-my-kimi feel like an oh-my-codex-style shell for Kimi CLI." />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -24,31 +25,34 @@
       <section class="hero">
         <div>
           <span class="badge">Workflow shortcuts</span>
-          <h1>Skills turn common tasks into repeatable flows.</h1>
-          <p>These are the high-traffic skills that make the Kimi-first fork feel like a product rather than a pile of commands.</p>
+          <h1>Skills are what make Kimi CLI feel like oh-my-kimi.</h1>
+          <p>
+            The point of this project is not just to rename commands. Skills turn recurring tasks into repeatable,
+            productized flows so Kimi CLI feels closer to an oh-my-codex-style environment.
+          </p>
         </div>
       </section>
 
       <section class="section">
         <table class="table" aria-label="Key skills">
           <thead>
-            <tr><th>Skill</th><th>What it does</th><th>When to use it</th></tr>
+            <tr><th>Skill</th><th>What it does</th><th>Why it matters</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>omk setup</code></td><td>Installs prompts, skills, and state scaffolding.</td><td>First run or refresh.</td></tr>
-            <tr><td><code>omk doctor</code></td><td>Checks install, config, and runtime health.</td><td>Something looks broken.</td></tr>
-            <tr><td><code>ralplan</code></td><td>Creates a consensus plan with planner / architect / critic review.</td><td>Before a larger change.</td></tr>
-            <tr><td><code>ralph</code></td><td>Persistent execution loop with verification.</td><td>When you want completion, not just a suggestion.</td></tr>
-            <tr><td><code>team</code></td><td>Runs coordinated tmux workers for parallel execution.</td><td>When the task splits into independent lanes.</td></tr>
-            <tr><td><code>hud</code></td><td>Surfaces runtime state, turns, and active modes.</td><td>When you want a live summary.</td></tr>
+            <tr><td><code>omk setup</code></td><td>Installs prompts, skills, config, and local state scaffolding.</td><td>Turns a plain Kimi CLI install into an opinionated shell.</td></tr>
+            <tr><td><code>omk doctor</code></td><td>Checks install, config, and runtime health.</td><td>Keeps the shell understandable when something feels off.</td></tr>
+            <tr><td><code>$deep-interview</code></td><td>Clarifies scope, constraints, and missing requirements.</td><td>Moves work away from vague prompting toward deliberate planning.</td></tr>
+            <tr><td><code>$ralplan</code></td><td>Creates an approved plan with structured tradeoff review.</td><td>Makes implementation less guessy and more repeatable.</td></tr>
+            <tr><td><code>$ralph</code></td><td>Runs a persistent execution loop with verification.</td><td>Pushes tasks toward done, not just discussed.</td></tr>
+            <tr><td><code>$team</code></td><td>Uses tmux workers for coordinated parallel work.</td><td>Adds the “multi-lane shell” feeling people expect from this kind of layer.</td></tr>
           </tbody>
         </table>
       </section>
 
       <section class="section grid">
-        <article class="card"><h3>Planning</h3><p><code>plan</code> / <code>ralplan</code> help you scope work before code changes start.</p></article>
-        <article class="card"><h3>Execution</h3><p><code>ralph</code>, <code>team</code>, and <code>autopilot</code> drive the work until it is verified.</p></article>
-        <article class="card"><h3>Support</h3><p><code>doctor</code>, <code>help</code>, and <code>hud</code> make the runtime easier to understand.</p></article>
+        <article class="card"><h3>Planning</h3><p>Use <code>$deep-interview</code> and <code>$ralplan</code> when the request is still fuzzy or needs approval.</p></article>
+        <article class="card"><h3>Execution</h3><p>Use <code>$ralph</code>, <code>$team</code>, and <code>autopilot</code> to carry approved work forward.</p></article>
+        <article class="card"><h3>Support</h3><p>Use <code>doctor</code>, <code>hud</code>, and docs when you need visibility into the runtime shell.</p></article>
       </section>
     </main>
   </body>

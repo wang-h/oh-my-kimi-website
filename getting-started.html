@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi Getting Started</title>
+    <meta name="description" content="Install oh-my-kimi and turn Kimi CLI into an oh-my-codex-style workflow shell in a few steps." />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -24,8 +25,11 @@
       <section class="hero">
         <div>
           <span class="badge">Start here</span>
-          <h1>Get from install to first workflow in a few minutes.</h1>
-          <p>oh-my-kimi keeps the CLI path Kimi-first while preserving older command names as aliases during migration.</p>
+          <h1>Install the Kimi CLI enhancement layer in four steps.</h1>
+          <p>
+            If your mental model is “I want something like oh-my-codex, but for Kimi CLI,” this is the shortest path.
+            Install the package, run setup, verify the environment, then launch into the workflow shell.
+          </p>
         </div>
       </section>
 
@@ -33,12 +37,12 @@
         <article class="card">
           <h3>1. Install</h3>
           <pre><code>npm install -g oh-my-kimi</code></pre>
-          <p class="muted">If you already have the older alias installed, it still works.</p>
+          <p class="muted">Install the package that wraps Kimi CLI with the oh-my-kimi workflow layer.</p>
         </article>
         <article class="card">
           <h3>2. Initialize</h3>
           <pre><code>omk setup</code></pre>
-          <p class="muted">This sets up the Kimi-first defaults, prompts, skills, and project state.</p>
+          <p class="muted">Scaffold prompts, skills, config, and local <code>.omk/</code> runtime state.</p>
         </article>
       </section>
 
@@ -46,18 +50,21 @@
         <article class="card">
           <h3>3. Check the environment</h3>
           <pre><code>omk doctor</code></pre>
-          <p class="muted">Use doctor when install or runtime behavior seems off.</p>
+          <p class="muted">Confirm the enhancement layer, Kimi CLI path, and supporting runtime are healthy.</p>
         </article>
         <article class="card">
-          <h3>4. Start working</h3>
+          <h3>4. Launch the shell</h3>
           <pre><code>omk</code></pre>
-          <p class="muted">For compatibility, older command names remain available while the migration finishes.</p>
+          <p class="muted">From there, you are using Kimi CLI through the oh-my-kimi shell.</p>
         </article>
       </section>
 
       <section class="section card">
-        <h3>Recommended first check</h3>
-        <p>After setup, read <a href="./compatibility.html">compatibility notes</a> to understand which behaviors are Kimi-first and which are still compatibility aliases.</p>
+        <h3>Recommended first workflow</h3>
+        <pre><code>$deep-interview "clarify the task"
+$ralplan "approve the implementation plan"
+$ralph "drive it to completion"</code></pre>
+        <p>That is the fastest way to feel what makes oh-my-kimi more than a plain command wrapper.</p>
       </section>
     </main>
   </body>

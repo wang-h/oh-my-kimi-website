@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>oh-my-kimi — 面向 Kimi 的多智能体编排</title>
-    <meta name="description" content="oh-my-kimi 是一个面向 Kimi Code CLI 的 Kimi-first 多智能体编排层，提供技能、安装、团队执行和文档站点。" />
+    <title>oh-my-kimi — 为 Kimi CLI 打造的增强层</title>
+    <meta name="description" content="oh-my-kimi 是一个面向 Kimi CLI 的增强层，风格类似 oh-my-codex / oh-my-claudecode，补上 setup、skills、team、state 与文档外壳。" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -24,70 +24,113 @@
     <main class="container">
       <section class="hero">
         <div>
-          <span class="badge">GitHub Pages · oh-my-kimi / OMK</span>
-          <h1>让 Kimi 先跑起来，再把工作流做好。</h1>
+          <span class="badge">Built for Kimi CLI · OMK</span>
+          <h1>这是给 Kimi CLI 用的 oh-my-codex 风格增强层。</h1>
           <p>
-            oh-my-kimi 把 Kimi Code CLI 变成一个面向工作流的环境：技能、安装、团队协同和持久化状态都已经准备好，
-            迁移期间仍保留 旧别名 作为兼容过渡。
+            oh-my-kimi 给 Kimi CLI 补上更完整的外壳：setup、skills、可复用工作流、team 执行、运行时辅助和本地持久化状态。
+            如果你见过 oh-my-codex 或 oh-my-claudecode，这就是同类思路——只是目标明确对准 Kimi CLI。
           </p>
           <div class="actions">
             <a class="button primary" href="./getting-started.html">快速开始</a>
             <a class="button" href="https://github.com/wang-h/oh-my-kimi">查看 GitHub</a>
             <a class="button" href="./docs.html">浏览文档</a>
           </div>
+          <div class="hero-note">
+            Kimi CLI 仍然是执行引擎；oh-my-kimi 提供的是工作流外壳与运行时增强。
+          </div>
         </div>
         <div class="hero-art">
           <img src="../assets/hero.jpg" alt="oh-my-kimi 吉祥物插图" />
-          <div class="mini">这是 oh-my-kimi 的公共站点，用来承接 CLI 仓库文档并提供一个清晰的中文入口。</div>
+          <div class="mini">一个更蓝、更明确、面向 Kimi 的公开品牌页面。</div>
         </div>
       </section>
 
       <section class="section">
-        <h2>它能带来什么</h2>
+        <h2>这个项目到底是什么</h2>
+        <div class="compare-grid">
+          <article class="card">
+            <div class="kicker">执行引擎</div>
+            <h3>Kimi CLI</h3>
+            <p>真正负责 agent 执行、会话和 CLI 交互的，仍然是 Kimi CLI 本身。</p>
+          </article>
+          <article class="card">
+            <div class="kicker">增强层</div>
+            <h3>oh-my-kimi</h3>
+            <p>在上面补上 setup、skills、文档、team、状态目录和更明确的工作流外壳。</p>
+          </article>
+          <article class="card">
+            <div class="kicker">同类参考</div>
+            <h3>oh-my-codex / oh-my-claudecode</h3>
+            <p>思路相似，但 oh-my-kimi 的目标是 Kimi CLI，而不是其他 CLI。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>为什么会有人用它</h2>
         <div class="grid">
           <article class="card">
-            <h3>像产品一样可用的命令</h3>
-            <p>安装、诊断、帮助、团队、规划、Ralph 等工作流被组织成统一体验。</p>
+            <h3>更稳定的工作流外壳</h3>
+            <p>不再每次都临时拼提示词，而是沿着一套固定的规划—执行—验证流程走。</p>
           </article>
           <article class="card">
-            <h3>持久化的项目状态</h3>
-            <p>计划、日志、记忆和模式状态都保存在项目状态目录中，可跨会话延续。</p>
+            <h3>Kimi-first 的 setup</h3>
+            <p>安装后能直接进入更完整的 Kimi CLI 使用方式，而不是只多一个命令名。</p>
           </article>
           <article class="card">
-            <h3>随仓库一起交付的文档</h3>
-            <p>从这里可以找到入门、兼容边界和核心文档页面。</p>
+            <h3>Team + runtime 能力</h3>
+            <p>在 Kimi CLI 上叠加 tmux team、HUD、MCP、通知和本地状态，不用自己从零搭。</p>
           </article>
           <article class="card">
-            <h3>面向公众的品牌站点</h3>
-            <p>网站与 CLI 仓库分离，便于持续打磨公开页面并快速迭代。</p>
+            <h3>本地持久化项目记忆</h3>
+            <p>计划、日志、状态和流程产物都留在本地，适合跨会话持续推进。</p>
           </article>
         </div>
       </section>
 
       <section class="section split">
         <article class="card">
-          <h3>快速启动</h3>
+          <h3>快速开始</h3>
           <ol>
             <li><code>npm install -g oh-my-kimi</code></li>
             <li><code>omk setup</code></li>
             <li><code>omk doctor</code></li>
-            <li><code>omk</code> 或 旧别名</li>
+            <li><code>omk</code></li>
           </ol>
+          <p class="muted">几分钟内就能把 Kimi CLI 变成一个更完整的工作流外壳。</p>
         </article>
         <article class="card">
-          <h3>兼容边界</h3>
-          <p>这个 fork 是 Kimi-first，但部分旧流程仍处于兼容过渡中。建议先阅读兼容说明，再判断是否完全等价。</p>
-          <p><a href="./compatibility.html">查看兼容说明 →</a></p>
+          <h3>核心工作流</h3>
+          <p>进入 Kimi CLI 之后，oh-my-kimi 希望你按更稳定的方式工作。</p>
+          <pre><code>$deep-interview "澄清任务"
+$ralplan "批准实施计划"
+$ralph "持续推进到完成"
+$team 3:executor "把已批准的工作并行化"</code></pre>
         </article>
+      </section>
+
+      <section class="section card">
+        <h2>项目致谢</h2>
+        <p>
+          <strong>oh-my-kimi</strong> 是在
+          <a href="https://github.com/Yeachan-Heo/oh-my-codex">oh-my-codex</a>
+          基础上继续完成的 Kimi-first 分叉版本，原项目与上游编排设计应归功于
+          <strong>Yeachan-Heo</strong>。
+        </p>
+        <p>
+          当前 fork 由 <strong>hao</strong>（<code>wang-h</code>）维护。
+          oh-my-kimi 的迁移、品牌替换与适配工作，是在 oh-my-codex 基础上完成的，
+          并在执行过程中明确使用了 <strong>OpenAI Codex / Codex CLI 工作流</strong> 进行协助。
+        </p>
       </section>
 
       <section class="section">
         <h2>继续浏览</h2>
         <div class="grid">
-          <article class="card"><h3><a href="./docs.html">文档</a></h3><p>查看完整站点地图和版本相关页面。</p></article>
-          <article class="card"><h3><a href="./skills.html">技能</a></h3><p>了解常用工作流和快捷入口。</p></article>
-          <article class="card"><h3><a href="./integrations.html">集成</a></h3><p>查看 MCP、通知和外部服务接入。</p></article>
-          <article class="card"><h3><a href="./getting-started.html">快速开始</a></h3><p>用最少步骤完成安装与启动。</p></article>
+          <article class="card"><h3><a href="./docs.html">文档</a></h3><p>从公开文档地图快速理解这个 Kimi CLI 增强层。</p></article>
+          <article class="card"><h3><a href="./skills.html">技能</a></h3><p>了解让 oh-my-kimi 更像产品而不是脚本集合的那些工作流。</p></article>
+          <article class="card"><h3><a href="./integrations.html">集成</a></h3><p>查看 MCP、通知、GitHub 和其他运行时辅助能力。</p></article>
+          <article class="card"><h3><a href="./compatibility.html">兼容性</a></h3><p>看清它和 Kimi CLI、oh-my-codex 之间的关系与边界。</p></article>
         </div>
       </section>
     </main>
@@ -97,7 +140,7 @@
         <div class="split">
           <div>
             <strong>oh-my-kimi</strong>
-            <div class="muted">面向 Kimi-first 分支的公共网站。</div>
+            <div class="muted">一个蓝色、明确、面向 Kimi CLI 的增强层网站。</div>
           </div>
           <div class="muted">
             <a href="https://github.com/wang-h/oh-my-kimi">CLI 仓库</a> ·

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi 技能</title>
+    <meta name="description" content="查看让 oh-my-kimi 更像 oh-my-codex 风格 Kimi CLI 外壳的那些核心技能与工作流。" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -24,31 +25,34 @@
       <section class="hero">
         <div>
           <span class="badge">工作流快捷入口</span>
-          <h1>把常见任务变成可重复的流程。</h1>
-          <p>这些高频技能让 Kimi-first fork 更像一个产品，而不是一堆零散命令。</p>
+          <h1>技能，才是 oh-my-kimi 像“外壳产品”的地方。</h1>
+          <p>
+            这个项目不是单纯改个名字。技能把高频任务做成可重复的流程，让 Kimi CLI 更接近你熟悉的
+            oh-my-codex 风格使用方式。
+          </p>
         </div>
       </section>
 
       <section class="section">
         <table class="table" aria-label="关键技能">
           <thead>
-            <tr><th>技能</th><th>作用</th><th>何时使用</th></tr>
+            <tr><th>技能</th><th>作用</th><th>为什么重要</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>omk setup</code></td><td>安装提示词、技能和状态脚手架。</td><td>首次运行或刷新时。</td></tr>
-            <tr><td><code>omk doctor</code></td><td>检查安装、配置和运行状态。</td><td>感觉哪里坏了。</td></tr>
-            <tr><td><code>ralplan</code></td><td>通过 planner / architect / critic 生成共识计划。</td><td>较大的变更前。</td></tr>
-            <tr><td><code>ralph</code></td><td>带验证的持续执行循环。</td><td>想要完成，而不只是建议。</td></tr>
-            <tr><td><code>team</code></td><td>用 tmux worker 做并行执行。</td><td>任务可以拆成独立 lanes 时。</td></tr>
-            <tr><td><code>hud</code></td><td>展示运行状态、turn 和活跃模式。</td><td>需要实时概览时。</td></tr>
+            <tr><td><code>omk setup</code></td><td>安装提示词、技能、配置和本地状态骨架。</td><td>把普通 Kimi CLI 安装变成一个可工作的 shell。</td></tr>
+            <tr><td><code>omk doctor</code></td><td>检查安装、配置和运行状态。</td><td>出问题时能快速知道 shell 哪一层坏了。</td></tr>
+            <tr><td><code>$deep-interview</code></td><td>澄清范围、约束和缺失需求。</td><td>让工作先变清楚，而不是直接猜着做。</td></tr>
+            <tr><td><code>$ralplan</code></td><td>生成并审阅一个被批准的实施计划。</td><td>让执行从“拍脑袋”变成“按计划推进”。</td></tr>
+            <tr><td><code>$ralph</code></td><td>持续执行并带验证闭环。</td><td>让任务更容易走到 done，而不只是停在建议层。</td></tr>
+            <tr><td><code>$team</code></td><td>用 tmux worker 做协调并行。</td><td>补上这种增强层最典型的多 lane 执行感。</td></tr>
           </tbody>
         </table>
       </section>
 
       <section class="section grid">
-        <article class="card"><h3>规划</h3><p><code>plan</code> / <code>ralplan</code> 帮你在改代码前先把范围理清。</p></article>
-        <article class="card"><h3>执行</h3><p><code>ralph</code>、<code>team</code> 和 <code>autopilot</code> 会把任务推进到验证完成。</p></article>
-        <article class="card"><h3>支持</h3><p><code>doctor</code>、<code>help</code> 和 <code>hud</code> 帮你看懂运行时。</p></article>
+        <article class="card"><h3>规划</h3><p>先用 <code>$deep-interview</code> 和 <code>$ralplan</code> 把任务理清，再进入执行。</p></article>
+        <article class="card"><h3>执行</h3><p>用 <code>$ralph</code>、<code>$team</code>、<code>autopilot</code> 把批准的工作往前推。</p></article>
+        <article class="card"><h3>支持</h3><p>用 <code>doctor</code>、<code>hud</code>、文档去理解这个 shell 的运行状态。</p></article>
       </section>
     </main>
   </body>
