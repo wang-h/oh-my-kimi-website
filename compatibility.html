@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oh-my-kimi Compatibility</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav" aria-label="Primary">
+        <a class="brand" href="./index.html">oh-my-kimi</a>
+        <a href="./index.html">Home</a>
+        <a href="./getting-started.html">Getting Started</a>
+        <a href="./docs.html">Docs</a>
+        <a href="./skills.html">Skills</a>
+        <a href="./integrations.html">Integrations</a>
+        <a class="active" href="./compatibility.html">Compatibility</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="badge">Migration boundary</span>
+          <h1>What is fully Kimi-first and what is still compatibility-only?</h1>
+          <p>oh-my-kimi is intentionally not a blind rename. Some surfaces are stable aliases while the port finishes.</p>
+        </div>
+      </section>
+
+      <section class="section split">
+        <article class="card">
+          <h3>Kimi-first</h3>
+          <ul>
+            <li>Primary package name: <code>oh-my-kimi</code></li>
+            <li>Primary command name: <code>omk</code></li>
+            <li>Public docs and website branding</li>
+            <li>Setup / doctor / help surfaces</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Compatibility alias</h3>
+          <ul>
+            <li><code>omx</code> remains available during migration</li>
+            <li>Historical mentions may still exist in archived docs</li>
+            <li>Some lower-level runtime terms may still say OMX internally</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section card">
+        <h3>Unsupported until explicitly added</h3>
+        <p>
+          If a Kimi capability does not have a direct OMX equivalent, the safest path is to document it as a
+          limitation instead of pretending parity exists.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
