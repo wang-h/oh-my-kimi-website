@@ -39,6 +39,9 @@
           <div class="hero-note">
             Kimi CLI stays the execution engine. oh-my-kimi adds the reusable workflow shell on top.
           </div>
+          <div class="hero-note">
+            Inside Kimi CLI, prefer explicit workflow calls like <code>/skill:ralplan</code>, <code>/skill:deep-interview</code>, <code>/skill:team</code>, and <code>/skill:ralph</code>. The <code>$name</code> shorthand is OMK-style syntax and is not guaranteed by Kimi itself.
+          </div>
         </div>
         <div class="hero-art">
           <img src="./assets/hero.jpg" alt="oh-my-kimi mascot illustration" />
@@ -104,9 +107,9 @@
           <h3>Core workflow</h3>
           <p>oh-my-kimi is opinionated about how work should flow once you are inside Kimi CLI.</p>
           <pre><code>$deep-interview "clarify the task"
-$ralplan "approve the implementation plan"
-$ralph "drive it to completion"
-$team 3:executor "parallelize the approved work"</code></pre>
+ /skill:ralplan approve the implementation plan
+ /skill:ralph drive it to completion
+ /skill:team 3:executor "parallelize the approved work"</code></pre>
         </article>
       </section>
 

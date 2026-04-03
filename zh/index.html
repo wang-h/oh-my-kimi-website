@@ -38,6 +38,9 @@
           <div class="hero-note">
             Kimi CLI 仍然是执行引擎；oh-my-kimi 提供的是工作流外壳与运行时增强。
           </div>
+          <div class="hero-note">
+            在 Kimi CLI 里，建议优先使用 <code>/skill:ralplan</code>、<code>/skill:deep-interview</code>、<code>/skill:team</code>、<code>/skill:ralph</code> 这类显式调用。<code>$name</code> 是 OMK 风格简写，不应默认假设 Kimi 原生支持。
+          </div>
         </div>
         <div class="hero-art">
           <img src="../assets/hero.jpg" alt="oh-my-kimi 吉祥物插图" />
@@ -102,10 +105,10 @@
         <article class="card">
           <h3>核心工作流</h3>
           <p>进入 Kimi CLI 之后，oh-my-kimi 希望你按更稳定的方式工作。</p>
-          <pre><code>$deep-interview "澄清任务"
-$ralplan "批准实施计划"
-$ralph "持续推进到完成"
-$team 3:executor "把已批准的工作并行化"</code></pre>
+          <pre><code>/skill:deep-interview 澄清任务
+/skill:ralplan 批准实施计划
+/skill:ralph 持续推进到完成
+/skill:team 3:executor "把已批准的工作并行化"</code></pre>
         </article>
       </section>
 
