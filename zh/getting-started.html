@@ -7,34 +7,88 @@
     <meta name="description" content="选择适合您的版本并安装 oh-my-kimi。" />
     <link rel="stylesheet" href="../style.css" />
     <style>
-      .edition-selector { display: flex; gap: 2rem; margin-top: 2rem; }
-      .edition-card { 
-        flex: 1; 
-        padding: 2rem; 
-        border-radius: 12px; 
-        background: #1a1a1a; 
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #333;
+      .edition-selector { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem; 
+        margin-top: 2rem; 
       }
-      .edition-card.python { border-top: 5px solid #3776ab; }
-      .edition-card.npm { border-top: 5px solid #cb3837; }
-      .edition-card h2 { margin-top: 0; color: #fff; }
-      .edition-card p { color: #ccc; }
-      .edition-card .muted { color: #888; font-size: 0.9rem; margin-top: auto; }
-      .step-list { margin-top: 1.5rem; }
-      .step-item { margin-bottom: 1.5rem; }
-      .step-item strong { display: block; margin-bottom: 0.5rem; color: #aaa; }
-      .step-item pre { 
-        background: #000; 
-        padding: 1rem; 
-        border-radius: 6px; 
-        border: 1px solid #444;
+      .edition-card { 
+        position: relative;
+        padding: 2.5rem; 
+        border-radius: 24px; 
+        background: linear-gradient(180deg, rgba(16, 36, 64, 0.8), rgba(9, 22, 39, 0.9));
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .edition-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-soft);
+      }
+      .edition-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 4px;
+      }
+      .edition-card.python::before { background: linear-gradient(90deg, #3776ab, #ffd343); }
+      .edition-card.npm::before { background: linear-gradient(90deg, #cb3837, #8a2be2); }
+      
+      .edition-card h2 { 
+        font-size: 2rem; 
+        margin-top: 0; 
+        display: flex; 
+        align-items: center; 
+        gap: 0.75rem; 
+      }
+      .edition-card .tagline {
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      .edition-card .desc {
+        color: var(--muted);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      .install-box {
+        margin-top: auto;
+      }
+      .install-box .label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+      }
+      pre {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.25rem;
+        border-radius: 12px;
         margin: 0;
       }
-      .step-item code { color: #50fa7b; }
-      @media (max-width: 768px) { .edition-selector { flex-direction: column; } }
+      code { background: transparent; padding: 0; color: #fff; }
+      
+      .recommended-badge {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--accent);
+        color: #fff;
+        padding: 0.2rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 880px) {
+        .edition-selector { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -50,59 +104,66 @@
     </header>
 
     <main class="container">
-      <section class="hero">
-        <h1>选择您的版本</h1>
-        <p>oh-my-kimi 提供两个版本。请选择最适合您开发环境的一个。</p>
+      <section class="hero" style="grid-template-columns: 1fr; text-align: center; padding: 4rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <span class="badge">选择您的工作流</span>
+          <h1 style="font-size: 3.5rem;">双重架构，同一使命。</h1>
+          <p style="font-size: 1.25rem;">oh-my-kimi 为增强 Kimi CLI 而生。请选择最适合您开发环境的驱动引擎。</p>
+        </div>
       </section>
 
       <div class="edition-selector">
         <!-- Python 版 -->
         <article class="edition-card python">
+          <div class="recommended-badge">推荐</div>
           <h2>🐍 Python 原生版</h2>
-          <p><strong>推荐。</strong> 适合 AI 研究员、算法工程师和习惯 Python 原生工作流的用户。</p>
-          <div class="step-list">
-            <div class="step-item">
-              <strong>1. 安装:</strong>
-              <pre><code>pip install oh-my-kimi</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>2. 初始化:</strong>
-              <pre><code>omk setup</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>3. 运行:</strong>
-              <pre><code>omk team "任务描述"</code></pre>
-            </div>
+          <div class="tagline">面向 AI 工程师的编排器</div>
+          <p class="desc">
+            与 Kimi 原生 Python 核心深度集成。适合需要用纯 Python 编写技能并处理重型数据工作流的用户。
+          </p>
+          <div class="install-box">
+            <div class="label">快速安装</div>
+            <pre><code>pip install oh-my-kimi</code></pre>
           </div>
-          <p class="muted">与 Kimi-CLI Python 环境深度集成，支持编写 Python 插件。</p>
         </article>
 
         <!-- NPM 版 -->
         <article class="edition-card npm">
           <h2>📦 NPM 混合版</h2>
-          <p>适合全栈开发者和偏好 Node.js 工具链的用户。</p>
-          <div class="step-list">
-            <div class="step-item">
-              <strong>1. 安装:</strong>
-              <pre><code>npm install -g oh-my-kimi</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>2. 初始化:</strong>
-              <pre><code>omk setup</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>3. 运行:</strong>
-              <pre><code>omk</code></pre>
-            </div>
+          <div class="tagline">全栈团队的增强层</div>
+          <p class="desc">
+            利用 Rust 提升 IO 性能的高性能包装器。适合身处 Node.js 生态、追求无缝 CLI 体验的开发者。
+          </p>
+          <div class="install-box">
+            <div class="label">快速安装</div>
+            <pre><code>npm install -g oh-my-kimi</code></pre>
           </div>
-          <p class="muted">利用 Rust 核心提供高性能 IO 编排。</p>
         </article>
       </div>
 
-      <section class="section card" style="margin-top: 3rem;">
-        <h3>我该如何选择？</h3>
-        <p>如果您的大部分工作涉及 Python（数据科学、机器学习、AI 脚本），<strong>Python 原生版</strong> 允许您用纯 Python 编写自定义技能（Skills）。如果您希望在现有的 npm 项目空间中获得一个轻量级的包装器，那么 <strong>NPM 混合版</strong> 更适合您。</p>
+      <section class="section" style="margin-top: 4rem;">
+        <div class="card" style="padding: 3rem; text-align: center; background: radial-gradient(circle at center, var(--bg-soft), var(--bg));">
+          <h2 style="font-size: 2rem;">安装后的后续步骤</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div>
+              <h3 style="color: var(--accent);">1. 初始化</h3>
+              <p>运行 <code>omk setup</code> 来初始化 <code>~/.kimi</code> 配置并下载基础技能。</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">2. 团队协作</h3>
+              <p>尝试 <code>omk team "任务"</code>，在终端中即刻开启多 Agent 自动化编排。</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">3. 实时监控</h3>
+              <p>在侧边窗口运行 <code>omk hud --watch</code>，实时追踪 Agent 进度与各项指标。</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <footer class="footer container">
+      <p>&copy; 2026 oh-my-kimi 贡献者。为 AI 原生工程的未来而建。</p>
+    </footer>
   </body>
 </html>

@@ -7,34 +7,89 @@
     <meta name="description" content="Choose your edition and install oh-my-kimi." />
     <link rel="stylesheet" href="./style.css" />
     <style>
-      .edition-selector { display: flex; gap: 2rem; margin-top: 2rem; }
-      .edition-card { 
-        flex: 1; 
-        padding: 2rem; 
-        border-radius: 12px; 
-        background: #1a1a1a; 
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #333;
+      .edition-selector { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem; 
+        margin-top: 2rem; 
       }
-      .edition-card.python { border-top: 5px solid #3776ab; }
-      .edition-card.npm { border-top: 5px solid #cb3837; }
-      .edition-card h2 { margin-top: 0; color: #fff; }
-      .edition-card p { color: #ccc; }
-      .edition-card .muted { color: #888; font-size: 0.9rem; margin-top: auto; }
-      .step-list { margin-top: 1.5rem; }
-      .step-item { margin-bottom: 1.5rem; }
-      .step-item strong { display: block; margin-bottom: 0.5rem; color: #aaa; }
-      .step-item pre { 
-        background: #000; 
-        padding: 1rem; 
-        border-radius: 6px; 
-        border: 1px solid #444;
+      .edition-card { 
+        position: relative;
+        padding: 2.5rem; 
+        border-radius: 24px; 
+        background: linear-gradient(180deg, rgba(16, 36, 64, 0.8), rgba(9, 22, 39, 0.9));
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .edition-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-soft);
+      }
+      /* Visual Accents */
+      .edition-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 4px;
+      }
+      .edition-card.python::before { background: linear-gradient(90deg, #3776ab, #ffd343); }
+      .edition-card.npm::before { background: linear-gradient(90deg, #cb3837, #8a2be2); }
+      
+      .edition-card h2 { 
+        font-size: 2rem; 
+        margin-top: 0; 
+        display: flex; 
+        align-items: center; 
+        gap: 0.75rem; 
+      }
+      .edition-card .tagline {
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      .edition-card .desc {
+        color: var(--muted);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      .install-box {
+        margin-top: auto;
+      }
+      .install-box .label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+      }
+      pre {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.25rem;
+        border-radius: 12px;
         margin: 0;
       }
-      .step-item code { color: #50fa7b; } /* Dracula-style green for commands */
-      @media (max-width: 768px) { .edition-selector { flex-direction: column; } }
+      code { background: transparent; padding: 0; color: #fff; }
+      
+      .recommended-badge {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--accent);
+        color: #fff;
+        padding: 0.2rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 880px) {
+        .edition-selector { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -50,59 +105,66 @@
     </header>
 
     <main class="container">
-      <section class="hero">
-        <h1>Choose Your Edition</h1>
-        <p>oh-my-kimi is available in two flavors. Choose the one that best fits your development environment.</p>
+      <section class="hero" style="grid-template-columns: 1fr; text-align: center; padding: 4rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <span class="badge">Choose Your Workflow</span>
+          <h1 style="font-size: 3.5rem;">Two Editions. One Mission.</h1>
+          <p style="font-size: 1.25rem;">oh-my-kimi is built to amplify Kimi CLI. Select the engine that powers your development environment.</p>
+        </div>
       </section>
 
       <div class="edition-selector">
         <!-- Python Edition -->
         <article class="edition-card python">
-          <h2>🐍 Python Edition</h2>
-          <p><strong>Recommended.</strong> Best for AI researchers, algorithm engineers, and Python-native workflows.</p>
-          <div class="step-list">
-            <div class="step-item">
-              <strong>1. Install:</strong>
-              <pre><code>pip install oh-my-kimi</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>2. Initialize:</strong>
-              <pre><code>omk setup</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>3. Run:</strong>
-              <pre><code>omk team "Task description"</code></pre>
-            </div>
+          <div class="recommended-badge">Recommended</div>
+          <h2>🐍 Python Native</h2>
+          <div class="tagline">The Orchestrator for AI Engineers</div>
+          <p class="desc">
+            Deeply integrated with Kimi's native Python core. Ideal for those who want to write skills in pure Python and handle data-heavy workflows.
+          </p>
+          <div class="install-box">
+            <div class="label">Quick Install</div>
+            <pre><code>pip install oh-my-kimi</code></pre>
           </div>
-          <p class="muted">Deep integration with Kimi-CLI Python environment.</p>
         </article>
 
         <!-- NPM Edition -->
         <article class="edition-card npm">
-          <h2>📦 NPM Edition</h2>
-          <p>Best for full-stack developers and users who prefer Node.js toolchains.</p>
-          <div class="step-list">
-            <div class="step-item">
-              <strong>1. Install:</strong>
-              <pre><code>npm install -g oh-my-kimi</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>2. Initialize:</strong>
-              <pre><code>omk setup</code></pre>
-            </div>
-            <div class="step-item">
-              <strong>3. Run:</strong>
-              <pre><code>omk</code></pre>
-            </div>
+          <h2>📦 NPM Hybrid</h2>
+          <div class="tagline">The Layer for Full-Stack Teams</div>
+          <p class="desc">
+            A high-performance wrapper leveraging Rust for IO. Best for developers living in Node.js ecosystems who want a seamless CLI experience.
+          </p>
+          <div class="install-box">
+            <div class="label">Quick Install</div>
+            <pre><code>npm install -g oh-my-kimi</code></pre>
           </div>
-          <p class="muted">Leverages Rust-based core for high-performance IO.</p>
         </article>
       </div>
 
-      <section class="section card" style="margin-top: 3rem;">
-        <h3>Which one should I choose?</h3>
-        <p>If you are working extensively with Python (Data Science, ML, AI scripts), the <strong>Python Edition</strong> allows you to write custom skills in pure Python. If you want a lightweight command wrapper within your existing npm-based workspace, the <strong>NPM Edition</strong> is for you.</p>
+      <section class="section" style="margin-top: 4rem;">
+        <div class="card" style="padding: 3rem; text-align: center; background: radial-gradient(circle at center, var(--bg-soft), var(--bg));">
+          <h2 style="font-size: 2rem;">Next Steps after Installation</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div>
+              <h3 style="color: var(--accent);">1. Initialize</h3>
+              <p>Run <code>omk setup</code> to scaffold your <code>~/.kimi</code> configuration and download essential skills.</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">2. Team Up</h3>
+              <p>Try <code>omk team "Task"</code> to see multi-agent orchestration in action within your terminal.</p>
+            </div>
+            <div>
+              <h3 style="color: var(--accent);">3. Monitor</h3>
+              <p>Launch <code>omk hud --watch</code> in a side pane to track agent progress and metrics in real-time.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <footer class="footer container">
+      <p>&copy; 2026 oh-my-kimi contributors. Built for the future of AI-native engineering.</p>
+    </footer>
   </body>
 </html>
