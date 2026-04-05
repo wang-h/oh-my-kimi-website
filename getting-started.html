@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi Getting Started</title>
-    <meta name="description" content="Install the Python version of oh-my-kimi and turn Kimi CLI into a multi-agent orchestrator." />
+    <meta name="description" content="Choose your edition and install oh-my-kimi." />
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      .edition-selector { display: flex; gap: 2rem; margin-top: 2rem; }
+      .edition-card { flex: 1; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+      .edition-card.python { border-top: 5px solid #3776ab; }
+      .edition-card.npm { border-top: 5px solid #cb3837; }
+      .edition-card h2 { margin-top: 0; }
+      .step-list { margin-top: 1.5rem; }
+      .step-item { margin-bottom: 1rem; }
+      .step-item code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    </style>
   </head>
   <body>
     <header>
@@ -15,58 +25,63 @@
         <a class="active" href="./getting-started.html">Getting Started</a>
         <a href="./docs.html">Docs</a>
         <a href="./skills.html">Skills</a>
-        <a href="./integrations.html">Integrations</a>
-        <a href="./compatibility.html">Compatibility</a>
         <a href="./zh/index.html">中文</a>
       </nav>
     </header>
 
     <main class="container">
       <section class="hero">
-        <div>
-          <span class="badge">Start here</span>
-          <h1>Install the Python-native Kimi CLI orchestrator.</h1>
-          <p>
-            The new Python version provides deep integration with the Kimi CLI ecosystem and modern AI toolchains.
-            Follow these steps to set up your environment and start orchestrating agents.
-          </p>
-        </div>
+        <h1>Choose Your Edition</h1>
+        <p>oh-my-kimi is available in two flavors. Choose the one that best fits your development environment.</p>
       </section>
 
-      <section class="section split">
-        <article class="card">
-          <h3>1. Install (Python Edition)</h3>
-          <pre><code># Clone and install in editable mode
-pip install oh-my-kimi-python</code></pre>
-          <p class="muted">Install the core orchestration layer. Supports Python 3.10+.</p>
+      <div class="edition-selector">
+        <!-- Python Edition -->
+        <article class="edition-card python">
+          <h2>🐍 Python Edition</h2>
+          <p><strong>Recommended.</strong> Best for AI researchers, algorithm engineers, and Python-native workflows.</p>
+          <div class="step-list">
+            <div class="step-item">
+              <strong>1. Install:</strong>
+              <pre><code>pip install oh-my-kimi-python</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>2. Initialize:</strong>
+              <pre><code>omk setup</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>3. Run:</strong>
+              <pre><code>omk team "Task description"</code></pre>
+            </div>
+          </div>
+          <p class="muted">Deep integration with Kimi-CLI Python environment.</p>
         </article>
-        <article class="card">
-          <h3>2. Initialize Environment</h3>
-          <pre><code>omk setup</code></pre>
-          <p class="muted">Configures <code>~/.kimi</code> home, API keys, and MCP servers automatically.</p>
-        </article>
-      </section>
 
-      <section class="section split">
-        <article class="card">
-          <h3>3. Multi-Agent Team</h3>
-          <pre><code>omk team "Write a crawler"</code></pre>
-          <p class="muted">Launches a Tmux session with one leader and three workers instantly.</p>
+        <!-- NPM Edition -->
+        <article class="edition-card npm">
+          <h2>📦 NPM Edition</h2>
+          <p>Best for full-stack developers and users who prefer Node.js toolchains.</p>
+          <div class="step-list">
+            <div class="step-item">
+              <strong>1. Install:</strong>
+              <pre><code>npm install -g oh-my-kimi</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>2. Initialize:</strong>
+              <pre><code>omk setup</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>3. Run:</strong>
+              <pre><code>omk</code></pre>
+            </div>
+          </div>
+          <p class="muted">Leverages Rust-based core for high-performance IO.</p>
         </article>
-        <article class="card">
-          <h3>4. Launch HUD</h3>
-          <pre><code>omk hud --watch</code></pre>
-          <p class="muted">Monitor your agent activities and session metrics in real-time.</p>
-        </article>
-      </section>
+      </div>
 
-      <section class="section card">
-        <h3>Legacy Migration Note</h3>
-        <p>
-          If you are upgrading from the npm version, simply uninstall the old package and alias <code>omk</code> to the new Python entry point. Your configurations in <code>~/.kimi</code> are compatible.
-        </p>
-        <pre><code>npm uninstall -g oh-my-kimi
-alias omk='/path/to/omk-py'</code></pre>
+      <section class="section card" style="margin-top: 3rem;">
+        <h3>Which one should I choose?</h3>
+        <p>If you are working extensively with Python (Data Science, ML, AI scripts), the <strong>Python Edition</strong> allows you to write custom skills in pure Python. If you want a lightweight command wrapper within your existing npm-based workspace, the <strong>NPM Edition</strong> is for you.</p>
       </section>
     </main>
   </body>

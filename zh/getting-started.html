@@ -4,8 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi 快速开始</title>
-    <meta name="description" content="安装 Python 版 oh-my-kimi，将 Kimi CLI 提升为多 Agent 编排框架。" />
+    <meta name="description" content="选择适合您的版本并安装 oh-my-kimi。" />
     <link rel="stylesheet" href="../style.css" />
+    <style>
+      .edition-selector { display: flex; gap: 2rem; margin-top: 2rem; }
+      .edition-card { flex: 1; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+      .edition-card.python { border-top: 5px solid #3776ab; }
+      .edition-card.npm { border-top: 5px solid #cb3837; }
+      .edition-card h2 { margin-top: 0; }
+      .step-list { margin-top: 1.5rem; }
+      .step-item { margin-bottom: 1rem; }
+      .step-item code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; }
+      @media (max-width: 768px) { .edition-selector { flex-direction: column; } }
+    </style>
   </head>
   <body>
     <header>
@@ -15,58 +26,63 @@
         <a class="active" href="./getting-started.html">快速开始</a>
         <a href="../docs.html">文档</a>
         <a href="../skills.html">技能</a>
-        <a href="../integrations.html">集成</a>
-        <a href="../compatibility.html">兼容性</a>
         <a href="../index.html">English</a>
       </nav>
     </header>
 
     <main class="container">
       <section class="hero">
-        <div>
-          <span class="badge">从这里开始</span>
-          <h1>安装 Python 原生 Kimi CLI 编排层</h1>
-          <p>
-            全新 Python 版本与 Kimi CLI 生态及现代 AI 工具链深度集成。
-            按照以下步骤配置环境并开始多 Agent 协作。
-          </p>
-        </div>
+        <h1>选择您的版本</h1>
+        <p>oh-my-kimi 提供两个版本。请选择最适合您开发环境的一个。</p>
       </section>
 
-      <section class="section split">
-        <article class="card">
-          <h3>1. 安装 (Python 版)</h3>
-          <pre><code># 克隆并以可编辑模式安装
-pip install oh-my-kimi-python</code></pre>
-          <p class="muted">安装核心编排层。支持 Python 3.10+。</p>
+      <div class="edition-selector">
+        <!-- Python 版 -->
+        <article class="edition-card python">
+          <h2>🐍 Python 原生版</h2>
+          <p><strong>推荐。</strong> 适合 AI 研究员、算法工程师和习惯 Python 原生工作流的用户。</p>
+          <div class="step-list">
+            <div class="step-item">
+              <strong>1. 安装:</strong>
+              <pre><code>pip install oh-my-kimi-python</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>2. 初始化:</strong>
+              <pre><code>omk setup</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>3. 运行:</strong>
+              <pre><code>omk team "任务描述"</code></pre>
+            </div>
+          </div>
+          <p class="muted">与 Kimi-CLI Python 环境深度集成，支持编写 Python 插件。</p>
         </article>
-        <article class="card">
-          <h3>2. 初始化环境</h3>
-          <pre><code>omk setup</code></pre>
-          <p class="muted">自动配置 <code>~/.kimi</code> 目录、API 密钥和 MCP 服务器。</p>
-        </article>
-      </section>
 
-      <section class="section split">
-        <article class="card">
-          <h3>3. 启动多 Agent 团队</h3>
-          <pre><code>omk team "写一个爬虫脚本"</code></pre>
-          <p class="muted">立即拉起一个包含 1 个 Leader 和 3 个 Worker 的 Tmux 会话。</p>
+        <!-- NPM 版 -->
+        <article class="edition-card npm">
+          <h2>📦 NPM 混合版</h2>
+          <p>适合全栈开发者和偏好 Node.js 工具链的用户。</p>
+          <div class="step-list">
+            <div class="step-item">
+              <strong>1. 安装:</strong>
+              <pre><code>npm install -g oh-my-kimi</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>2. 初始化:</strong>
+              <pre><code>omk setup</code></pre>
+            </div>
+            <div class="step-item">
+              <strong>3. 运行:</strong>
+              <pre><code>omk</code></pre>
+            </div>
+          </div>
+          <p class="muted">利用 Rust 核心提供高性能 IO 编排。</p>
         </article>
-        <article class="card">
-          <h3>4. 开启 HUD 监控</h3>
-          <pre><code>omk hud --watch</code></pre>
-          <p class="muted">实时监控 Agent 活动状态和会话指标。</p>
-        </article>
-      </section>
+      </div>
 
-      <section class="section card">
-        <h3>旧版本迁移说明</h3>
-        <p>
-          如果您是从 npm 版本升级，只需卸载旧包并将 <code>omk</code> 别名指向新的 Python 入口即可。您在 <code>~/.kimi</code> 中的配置是完全兼容的。
-        </p>
-        <pre><code>npm uninstall -g oh-my-kimi
-alias omk='/path/to/omk-py'</code></pre>
+      <section class="section card" style="margin-top: 3rem;">
+        <h3>我该如何选择？</h3>
+        <p>如果您的大部分工作涉及 Python（数据科学、机器学习、AI 脚本），<strong>Python 原生版</strong> 允许您用纯 Python 编写自定义技能（Skills）。如果您希望在现有的 npm 项目空间中获得一个轻量级的包装器，那么 <strong>NPM 混合版</strong> 更适合您。</p>
       </section>
     </main>
   </body>
