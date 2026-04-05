@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oh-my-kimi Getting Started</title>
-    <meta name="description" content="Install oh-my-kimi and turn Kimi CLI into an oh-my-codex-style workflow shell in a few steps." />
+    <meta name="description" content="Install the Python version of oh-my-kimi and turn Kimi CLI into a multi-agent orchestrator." />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -25,46 +25,48 @@
       <section class="hero">
         <div>
           <span class="badge">Start here</span>
-          <h1>Install the Kimi CLI enhancement layer in four steps.</h1>
+          <h1>Install the Python-native Kimi CLI orchestrator.</h1>
           <p>
-            If your mental model is “I want something like oh-my-codex, but for Kimi CLI,” this is the shortest path.
-            Install the package, run setup, verify the environment, then launch into the workflow shell.
+            The new Python version provides deep integration with the Kimi CLI ecosystem and modern AI toolchains.
+            Follow these steps to set up your environment and start orchestrating agents.
           </p>
         </div>
       </section>
 
       <section class="section split">
         <article class="card">
-          <h3>1. Install</h3>
-          <pre><code>npm install -g oh-my-kimi</code></pre>
-          <p class="muted">Install the package that wraps Kimi CLI with the oh-my-kimi workflow layer.</p>
+          <h3>1. Install (Python Edition)</h3>
+          <pre><code># Clone and install in editable mode
+pip install oh-my-kimi-python</code></pre>
+          <p class="muted">Install the core orchestration layer. Supports Python 3.10+.</p>
         </article>
         <article class="card">
-          <h3>2. Initialize</h3>
+          <h3>2. Initialize Environment</h3>
           <pre><code>omk setup</code></pre>
-          <p class="muted">Scaffold prompts, skills, config, and local <code>.omk/</code> runtime state.</p>
+          <p class="muted">Configures <code>~/.kimi</code> home, API keys, and MCP servers automatically.</p>
         </article>
       </section>
 
       <section class="section split">
         <article class="card">
-          <h3>3. Check the environment</h3>
-          <pre><code>omk doctor</code></pre>
-          <p class="muted">Confirm the enhancement layer, Kimi CLI path, and supporting runtime are healthy.</p>
+          <h3>3. Multi-Agent Team</h3>
+          <pre><code>omk team "Write a crawler"</code></pre>
+          <p class="muted">Launches a Tmux session with one leader and three workers instantly.</p>
         </article>
         <article class="card">
-          <h3>4. Launch the shell</h3>
-          <pre><code>omk</code></pre>
-          <p class="muted">From there, you are using Kimi CLI through the oh-my-kimi shell.</p>
+          <h3>4. Launch HUD</h3>
+          <pre><code>omk hud --watch</code></pre>
+          <p class="muted">Monitor your agent activities and session metrics in real-time.</p>
         </article>
       </section>
 
       <section class="section card">
-        <h3>Recommended first workflow</h3>
-        <pre><code>/skill:deep-interview clarify the task
-/skill:ralplan approve the implementation plan
-/skill:ralph drive it to completion</code></pre>
-        <p>That is the fastest way to feel what makes oh-my-kimi more than a plain command wrapper. Use <code>/skill:</code> entrypoints by default inside Kimi CLI.</p>
+        <h3>Legacy Migration Note</h3>
+        <p>
+          If you are upgrading from the npm version, simply uninstall the old package and alias <code>omk</code> to the new Python entry point. Your configurations in <code>~/.kimi</code> are compatible.
+        </p>
+        <pre><code>npm uninstall -g oh-my-kimi
+alias omk='/path/to/omk-py'</code></pre>
       </section>
     </main>
   </body>
