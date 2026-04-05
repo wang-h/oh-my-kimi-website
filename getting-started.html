@@ -8,13 +8,33 @@
     <link rel="stylesheet" href="./style.css" />
     <style>
       .edition-selector { display: flex; gap: 2rem; margin-top: 2rem; }
-      .edition-card { flex: 1; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+      .edition-card { 
+        flex: 1; 
+        padding: 2rem; 
+        border-radius: 12px; 
+        background: #1a1a1a; 
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #333;
+      }
       .edition-card.python { border-top: 5px solid #3776ab; }
       .edition-card.npm { border-top: 5px solid #cb3837; }
-      .edition-card h2 { margin-top: 0; }
+      .edition-card h2 { margin-top: 0; color: #fff; }
+      .edition-card p { color: #ccc; }
+      .edition-card .muted { color: #888; font-size: 0.9rem; margin-top: auto; }
       .step-list { margin-top: 1.5rem; }
-      .step-item { margin-bottom: 1rem; }
-      .step-item code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; }
+      .step-item { margin-bottom: 1.5rem; }
+      .step-item strong { display: block; margin-bottom: 0.5rem; color: #aaa; }
+      .step-item pre { 
+        background: #000; 
+        padding: 1rem; 
+        border-radius: 6px; 
+        border: 1px solid #444;
+        margin: 0;
+      }
+      .step-item code { color: #50fa7b; } /* Dracula-style green for commands */
+      @media (max-width: 768px) { .edition-selector { flex-direction: column; } }
     </style>
   </head>
   <body>
